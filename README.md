@@ -1,9 +1,10 @@
-Функция для расчёта совстречаемости слов в текстовых данных - подходит в качестве этапа предобработки перед визуализацией сети на основе текста (аналог функции "coocurence" из пакета "udpipe", реализованного в R)
+Calculation of word co-occurrence in text data - suitable as a preprocessing step before visualizing a text-based network (analogous to the "coocurence" function from the "udpipe" package implemented in R)
 
-На вход подаётся:
-  1) sentences - список с текстами,
-  2) window-size - кол-во слов, в пределах которых считать совстречаемость (например, если параметр равен 3, значит считается, что слово X встерчается со словом Y, если оно находится в пределах +/- 3 слов от него),
-  3) min_edges - минимальное количество связей, которое требуется для дальнейшего анализа (например, если параметр равен 3, значит в итоговый датафрейм не войдут связки из слов, которые встречаются менее 3 раз)
+The inputs are:
+  1) sentences - a list of texts,
+  2) window-size - the number of words within which to consider co-occurrence (for example, if the parameter is equal to 3, then it is considered that word X meets word Y if it is within +/- 3 words from it),
+  3) min_edges - the minimum number of links required for further analysis (for example, if the parameter is equal to 3, then the final dataframe will not include links of words that occur less than 3 times).
 
-На выходе функция предлагает датафрейм без дубликатов с 3 колонками: слово X; слово Y; количество раз, которое они встречались вместе. 
+The function outputs a dataframe without duplicates with 3 columns: word X; word Y; the number of times they occur together. 
 
+The output can be used for visualization of a network in Gephi or NetworkX.
